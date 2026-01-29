@@ -3,21 +3,22 @@
   "repository": "travisccook/DroidNetSignalBooster-releases",
   "latest": {
     "1": {
-      "version": "1.6.0",
-      "release_date": "2026-01-28T18:43:18Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v1.6.0/droidnet-update-1.6.0.zip",
-      "checksum_sha256": "d255c07c7c5f6bced8f42c61f3019ecccf425b1198d64909e3dde3a242c918a2",
-      "size_bytes": 943659,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v1.6.0",
+      "version": "1.7.0",
+      "release_date": "2026-01-29T22:08:00Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v1.7.0/droidnet-update-1.7.0.zip",
+      "checksum_sha256": "eeb2475e945039dc1cadcf55c2ded3de7ab9f2f186af12cefb13589ba7dbbc49",
+      "size_bytes": 944664,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v1.7.0",
       "min_version": "1.0.0",
       "changelog": [
-        "This release improves Maestro servo control accuracy and adds convenience features for managing channel settings.",
-        "Accurate initial servo positions** - Servo sliders now show the actual device positions immediately when connecting, instead of defaulting to center position until manually adjusted",
-        "Go Home works on first click** - The Go Home button now correctly moves servos to their home positions without needing to \"wiggle\" sliders first",
-        "Center All respects channel configuration** - Center All now moves each servo to the true center of its configured min/max range, rather than assuming 1500\u00b5s for all servos",
-        "Center All skips disabled servos** - Disabled servos are no longer inadvertently enabled when clicking Center All",
-        "Position indicator alignment** - The green \"actual position\" dot now properly aligns with the blue slider thumb",
-        "Expand All / Collapse All buttons** - New buttons in the Servo Control header to quickly show or hide the settings panel for all visible channels"
+        "This release fixes duplicate devices appearing in the Droid tab, adds a Pi model column, and improves feature badge accuracy.",
+        "Duplicate device fix - Devices that appeared multiple times due to mDNS hostname conflicts (e.g., device-2 ghosts) are now automatically deduplicated and cleaned up",
+        "Pi model column - The Droid tab now shows each device's Raspberry Pi model (Zero W, Zero 2, Pi 3, Pi 4) between the Device and Version columns",
+        "Accurate feature badges - Comlink, WCB, and Maestro badges now reflect the configured enabled state rather than just checking if a process is running",
+        "Maestro badge shows when the feature is enabled and hardware is detected; WCB badge shows when enabled and listeners are active",
+        "Improved mDNS discovery - Fixed hostname parsing and eliminated spurious IPv6 errors in device scanning",
+        "Cross-major-version updates - Update checker now supports upgrading across major versions",
+        "Maestro info icons - Channel configuration labels now include clickable hint icons for quick reference"
       ]
     }
   },
