@@ -3,21 +3,24 @@
   "repository": "travisccook/DroidNetSignalBooster-releases",
   "latest": {
     "1": {
-      "version": "1.8.0",
-      "release_date": "2026-02-26T21:16:21Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v1.8.0/droidnet-update-1.8.0.zip",
-      "checksum_sha256": "fe0542e57896732dcbb25754cf2ae9f4fbeafc6b62712c4c3f46077fc933e095",
-      "size_bytes": 1042086,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v1.8.0",
+      "version": "1.9.0",
+      "release_date": "2026-05-07T21:01:50Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v1.9.0/droidnet-update-1.9.0.zip",
+      "checksum_sha256": "fa364af2e35564c39ade706bfeb73b36d6d75092530e76e7268b12033ff3fe38",
+      "size_bytes": 1044236,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v1.9.0",
       "min_version": "1.0.0",
       "changelog": [
-        "Script Editor with syntax highlighting, line numbers, autocomplete, and live error annotations (CodeMirror)",
-        "Script Editor Run button - Compile, upload, and run scripts directly from the editor",
-        "Optimized script generator with pattern decoders for smaller bytecode within 8KB EEPROM budget",
-        "Sync budget tracking - See EEPROM usage before uploading",
-        "Rewrote Maestro compiler with correct Pololu Mini Maestro opcodes",
-        "Replaced alert dialogs with non-blocking toast notifications",
-        "Added OPT badge for sequences using optimized encoding"
+        "First Comlink command now reliably reaches the WCB.** Fixed a race condition",
+        "where the first Comlink command after a cold connection would silently fail \u2014",
+        "the booster reported success but the bytes were dropped before reaching the",
+        "device. The previous workaround of opening the WCB tab in DroidNet first is no",
+        "longer needed.",
+        "Comlink history view recovers from corruption automatically.** A torn write",
+        "could previously leave the history file unparseable, causing the history view",
+        "to error every poll and crashing the Comlink service thread on the next",
+        "command. The view now self-heals: corrupt files are preserved as",
+        "`.corrupt.<timestamp>` for diagnosis and a fresh history starts immediately."
       ]
     }
   },
