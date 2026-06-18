@@ -1,48 +1,197 @@
-# DroidNet Signal Booster - Releases
+# DroidNet Signal Booster
 
-This repository contains release artifacts for DroidNet Signal Booster devices.
+Turn a Raspberry Pi into a wireless programming hub for your droid — flash Arduino and
+ESP32 boards, monitor serial output, and control servos, all from a browser.
 
-## For Users
+---
 
-### Supported Hardware
+## Start Here — Which are you?
 
-| Pi Model         | Support Level  | Notes                                 |
-|------------------|----------------|---------------------------------------|
-| **Pi Zero 2 W**  | ✅ Recommended | Best balance of size and performance  |
-| **Pi 3**         | ✅ Recommended | Full performance, larger form factor  |
-| **Pi 4**         | ✅ Recommended | Maximum performance                   |
+### I am setting up a brand-new device (fresh SD card)
 
-> **Note:** The original Pi Zero W is no longer supported due to its single-core
-> processor and limited RAM. If you are currently using a Pi Zero W, we recommend
-> switching to the **Pi Zero 2 W**, which has the same form factor with
-> significantly better performance.
+**You need a disk image.** Jump to [Download the Image](#download-the-image-fresh-install)
+below.
 
-### Fresh Install (New Devices)
+> **Do NOT download an "update package" file for a fresh install.** Update packages are
+> only for devices that are already running DroidNet. They are not disk images and cannot
+> be flashed to a blank SD card.
 
-Download the appropriate image for your Raspberry Pi model from the [latest release](https://github.com/travisccook/DroidNetSignalBooster-releases/releases).
+---
 
-| Pi Model     | Image                            |
-|--------------|----------------------------------|
-| Pi Zero 2 W  | `droidnet-lite-zero2-w-vX.X.img` |
-| Pi 3         | `droidnet-lite-pi3-vX.X.img`     |
-| Pi 4         | `droidnet-lite-pi4-vX.X.img`     |
+### I already have a DroidNet device and want to update it
 
-Flash the image to an SD card using [Raspberry Pi Imager](https://www.raspberrypi.com/software/) or similar tool.
+**You do not need to download anything.** The device updates itself from inside the web
+interface:
 
-### Updating Existing Devices
+1. Connect to the device (join its Wi-Fi or your home network).
+2. Open `http://192.168.4.1` (AP mode) or `http://droidnet.local` (client mode).
+3. Go to **Config → System Update → Check for Updates**.
+4. Click **Update Now** when an update is shown.
 
-Devices automatically check for updates and will notify you when one is available. You can also:
+Need to update without internet access? See [Updating an Existing Device](#updating-an-existing-device).
 
-1. **Via Web Interface**: Go to Config → System Update → Click "Check for Updates"
-2. **Manual Upload**: Download the update package from releases and upload via the web interface
+---
 
-## For Developers
+## Download the Image (fresh install)
 
-See the [Wiki](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki) for documentation.
+> **Images live only on the 2.0 release.**
+> Later releases (2.0.1, 2.0.2, 2.1, …) are update packages — your device applies those
+> automatically from inside the web interface. Do not hunt for `.img.zip` files on those
+> releases; they are not there.
+
+**Always download your image from here:**
+[https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60)
+
+### Pick your Pi
+
+| Your Raspberry Pi | Download this file |
+|-------------------|--------------------|
+| **Pi Zero 2 W** (recommended) | `droidnet-lite-zero2-w-v2.0.60.img.zip` |
+| **Pi 3 / 3B / 3B+** | `droidnet-lite-pi3-v2.0.60.img.zip` |
+| **Pi 4** | `droidnet-lite-pi4-v2.0.60.img.zip` |
+| Pi Zero W | **Not supported in 2.0** — see [Pi Zero W note](#pi-zero-w) |
+
+Also download the matching `.sha256` file (same name, `.sha256` extension) so you can
+verify the download is not corrupted.
+
+> **Why does "Latest" on GitHub sometimes show no image?**
+> GitHub's "Latest release" badge auto-points at the most recently published release.
+> Minor releases (2.0.61, 2.1, …) contain only update packages. If the release you land
+> on has no `.img.zip` file, use the direct link above — it always points at the image
+> carrier for 2.0.
+
+### Verify the download (recommended)
+
+```bash
+# macOS / Linux — run this in the same folder as your download
+shasum -a 256 -c droidnet-lite-zero2-w-v2.0.60.img.zip.sha256
+```
+
+You should see `OK`. If you see `FAILED`, delete the file and re-download before
+continuing.
+
+Windows users: use [CertUtil](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
+or [7-Zip](https://www.7-zip.org/) to check the SHA-256 hash.
+
+### Flash and first boot
+
+See the **[Installation](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Installation)**
+wiki page for step-by-step instructions using Raspberry Pi Imager, balenaEtcher, or the
+command line. The short version:
+
+1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
+2. Choose OS → **Use custom** → select the `.img.zip` file (no manual unzip needed).
+3. Choose Storage → select your SD card.
+4. Click **Write**.
+5. Insert the card into your Pi and power it on.
+6. **Wait 2–3 minutes** — first boot is slow while the device expands its filesystem and
+   configures itself.
+
+---
+
+## Connect to Your Device
+
+Once the first boot is complete:
+
+1. On your phone or computer, open Wi-Fi settings and join the network named
+   **DroidNet-XXXX** (the XXXX is unique to your device, based on its MAC address —
+   for example, `DroidNet-A1B2`).
+2. Password: **`droidnet123`**
+3. Open **`http://192.168.4.1`** in a browser.
+
+You should see the DroidNet Signal Booster dashboard.
+
+> **Security reminder:** The default password (`droidnet123`) is the same on every new
+> device. Change it in **Config → Access Point Settings** before using your device in a
+> shared space.
+
+For a complete walkthrough of first-time setup and feature configuration, see
+**[Getting Started](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Getting-Started)**.
+
+---
+
+## Updating an Existing Device
+
+**This includes v1.x → 2.0 upgrades.** If you are running any v1.x release, you can
+update to DroidNet 2.0 in place — no SD card re-flash required. The device's built-in
+update checker looks across major version channels and will offer the 2.0 update
+through the same web interface flow as any other update.
+
+### Normal update (recommended)
+
+The easiest way to update is from inside the web interface:
+
+1. Open the web interface.
+2. Go to **Config → System Update**.
+3. Click **Check for Updates**.
+4. Click **Update Now** when shown.
+
+The device downloads and applies the update, then reboots. No SD card required.
+This works whether you are updating within 1.x, within 2.0, or upgrading from 1.x to 2.0.
+
+### Offline / manual update
+
+If your device has no internet access:
+
+1. Go to the [Releases page](https://github.com/travisccook/DroidNetSignalBooster-releases/releases)
+   and download the latest `droidnet-update-2.x.x.zip` update package.
+2. In the web interface, go to **Config → System Update**.
+3. Click **Manual Update** and upload the `.zip` file.
+
+> **Do NOT flash an update package to an SD card.** It is not a disk image. Flashing it
+> will not work and will leave your SD card unusable.
+
+---
 
 ## Version Scheme
 
-- **Major versions** (v1, v2, v3) = New images with breaking changes
-- **Minor versions** (v1.1, v1.2, v1.47) = Cumulative update packages
+| Version type | What it means | How you get it |
+|---|---|---|
+| **Major** (2.0, 3.0, …) | New SD-card image — breaking changes, full reflash required | Download the image from the initial release of that major line and flash your SD card |
+| **Minor / patch** (2.1, 2.0.61, …) | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
 
-Update packages are cumulative - the latest v1.x update brings any v1.0+ installation to current.
+**The rule:** images live only on the first release of each major version line.
+The `v2.0.60` release on GitHub is the permanent home of all 2.0 disk images. Later
+releases (2.0.61, 2.1, 2.2, …) carry only update packages — no images.
+
+---
+
+## Supported Hardware
+
+| Raspberry Pi | Status |
+|---|---|
+| Pi Zero 2 W | Recommended — compact, good performance |
+| Pi 3 / 3B / 3B+ | Recommended — full performance |
+| Pi 4 | Recommended — maximum performance |
+| Pi Zero W | Not supported in 2.0 (see below) |
+
+### Pi Zero W
+
+The original Pi Zero W is **not supported in DroidNet 2.0**. The last image built for it
+was v1.4.0.
+
+If you are running a Pi Zero W:
+- Stay on v1.x (the v1.4.0 image is still available in the
+  [v1.4.0 release](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v1.4.0)).
+- Or upgrade your hardware to a **Pi Zero 2 W** — it is the same physical size, costs
+  about the same, and is fully supported in 2.0.
+
+---
+
+## Documentation
+
+Full documentation lives in the [Wiki](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki):
+
+- [Getting Started](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Getting-Started) — Hardware, image download, first boot, and feature setup
+- [Installation](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Installation) — Detailed flashing instructions (Imager, Etcher, command line)
+- [Updating](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Updating) — Keeping your device current
+- [Network Modes](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Network-Modes) — AP mode vs client mode
+- [Troubleshooting](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Troubleshooting) — Common problems and solutions
+
+---
+
+## Community
+
+Questions? Want to show off your build?
+
+**[Join the Bluegrass Droidworks Discord](https://discord.gg/SV9N6MX7xR)**
