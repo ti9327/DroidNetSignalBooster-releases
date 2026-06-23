@@ -24,20 +24,19 @@
       ]
     },
     "2": {
-      "version": "2.0.60",
-      "release_date": "2026-06-18T15:35:14Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.0.60/droidnet-update-2.0.60.zip",
-      "checksum_sha256": "56654003aabe2e74ce0cceaf5ef51f31abfffb3f76675727d9476eeb3934e978",
-      "size_bytes": 123635381,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60",
+      "version": "2.1.0",
+      "release_date": "2026-06-23T04:52:08Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.0/droidnet-update-2.1.0.zip",
+      "checksum_sha256": "6d24b2e04f696e225531d4b25a3caaca3eadc2943ca8487c1c3cabfa9497444b",
+      "size_bytes": 124193672,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.0",
       "min_version": "1.0.0",
       "changelog": [
-        "DroidNet Signal Booster 2.0 \u2014 major release with expanded Cantina Studio animation editor, WCB Wizard integration, and Maestro servo control improvements.",
-        "Cantina Studio: full beat-aligned animation editor with interactive graphical timeline, drag-to-edit, scrub playback, and 18-pattern sequence library.",
-        "WCB tab: integrated WCB Wizard for guided board setup and configuration.",
-        "Maestro: unified animation editor merging generator and recorder, ghost preview, undo/redo snapshots, and duplicate support.",
-        "Droid tab: manage multiple Signal Boosters in a single droid with real-time per-device status and one-click coordinated updates.",
-        "Pi Zero W is no longer supported \u2014 use Pi Zero 2 W, Pi 3, or Pi 4."
+        "DroidNet Signal Booster 2.1 \u2014 Cantina Studio animations can now play standalone on the Maestro, plus a graphical WCB command builder.",
+        "Cantina Studio: multi-section songs with smooth sine / breathing motion now fit and play directly on the Maestro (synced sequences), instead of only streaming from the booster while the web interface is connected.",
+        "WCB: graphical command builder \u2014 compose serial commands from a bundled parts library with a Builder/Text toggle.",
+        "Maestro: servo speed and acceleration limits no longer leak across animation sections.",
+        "Maestro: live-preview playback recovers correctly when resumed from past the end of an animation."
       ]
     }
   },
