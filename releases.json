@@ -24,19 +24,17 @@
       ]
     },
     "2": {
-      "version": "2.1.0",
-      "release_date": "2026-06-23T04:52:08Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.0/droidnet-update-2.1.0.zip",
-      "checksum_sha256": "6d24b2e04f696e225531d4b25a3caaca3eadc2943ca8487c1c3cabfa9497444b",
-      "size_bytes": 124193672,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.0",
+      "version": "2.1.1",
+      "release_date": "2026-07-05T21:44:04Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-update-2.1.1.zip",
+      "checksum_sha256": "597110fc513602762cfe9d3661cab122446120a4d3c0b8117c4de13803aa1879",
+      "size_bytes": 13461859,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1",
       "min_version": "1.0.0",
       "changelog": [
-        "DroidNet Signal Booster 2.1 \u2014 Cantina Studio animations can now play standalone on the Maestro, plus a graphical WCB command builder.",
-        "Cantina Studio: multi-section songs with smooth sine / breathing motion now fit and play directly on the Maestro (synced sequences), instead of only streaming from the booster while the web interface is connected.",
-        "WCB: graphical command builder \u2014 compose serial commands from a bundled parts library with a Builder/Text toggle.",
-        "Maestro: servo speed and acceleration limits no longer leak across animation sections.",
-        "Maestro: live-preview playback recovers correctly when resumed from past the end of an animation."
+        "Maintenance release: fixes a problem that could stop software updates from installing.",
+        "Updates no longer fail during the 'Creating backup' step. On some devices, installing an update stopped with an error while backing up the current installation, leaving the booster on its existing version. Updates now complete reliably, and fresh-install images no longer include the leftover developer file that caused it.",
+        "Already stuck on this error? Open the Emergency Console at http://YOUR-BOOSTER-ADDRESS/console and run: cd /opt/droidnet/web && rm -rf standalone && echo REMOVED-OK  -- then use Config > System Update > Check for Updates to install 2.1.1."
       ]
     }
   },
