@@ -50,20 +50,20 @@
       "note": "Debug images available - contact for download links"
     },
     "2": {
-      "version": "2.0.60",
+      "version": "2.1.1",
       "models": [
         "zero2-w",
         "pi3",
         "pi4"
       ],
-      "release_date": "2026-06-18",
-      "release_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60",
+      "release_date": "2026-07-05",
+      "release_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1",
       "downloads": {
-        "zero2-w": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.0.60/droidnet-lite-zero2-w-v2.0.60.img.zip",
-        "pi3": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.0.60/droidnet-lite-pi3-v2.0.60.img.zip",
-        "pi4": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.0.60/droidnet-lite-pi4-v2.0.60.img.zip"
+        "zero2-w": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-lite-zero2-w-v2.1.1.img.zip",
+        "pi3": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-lite-pi3-v2.1.1.img.zip",
+        "pi4": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-lite-pi4-v2.1.1.img.zip"
       },
-      "note": "Fresh-install SD-card images for 2.0. Pi Zero W is not supported in 2.0 \u2014 use Pi Zero 2 W. Minor releases (2.0.61+) are update packages only; images live exclusively on this v2.0.60 release."
+      "note": "Fresh-install SD-card images for 2.x. Pi Zero W is not supported \u2014 use Pi Zero 2 W. These replace the earlier 2.0.60 images, which shipped a leftover file that could stop updates from installing on first update."
     }
   }
 }
