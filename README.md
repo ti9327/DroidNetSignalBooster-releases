@@ -39,28 +39,28 @@ SD card — it is not a disk image.)
 
 ## Download the Image (fresh install)
 
-> **Images live only on the 2.0 release.**
-> Later releases (2.0.1, 2.0.2, 2.1, …) are update packages — your device applies those
+> **Images live on the current 2.x image release (v2.1.1).**
+> Update-only releases contain no `.img.zip` files — your device applies those
 > automatically from inside the web interface. Do not hunt for `.img.zip` files on those
-> releases; they are not there.
+> releases; use the direct link below.
 
 **Always download your image from here:**
-[https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.0.60)
+[https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1)
 
 ### Pick your Pi
 
 | Your Raspberry Pi | Download this file |
 |-------------------|--------------------|
-| **Pi Zero 2 W** (recommended) | `droidnet-lite-zero2-w-v2.0.60.img.zip` |
-| **Pi 3 / 3B / 3B+** | `droidnet-lite-pi3-v2.0.60.img.zip` |
-| **Pi 4** | `droidnet-lite-pi4-v2.0.60.img.zip` |
+| **Pi Zero 2 W** (recommended) | `droidnet-lite-zero2-w-v2.1.1.img.zip` |
+| **Pi 3 / 3B / 3B+** | `droidnet-lite-pi3-v2.1.1.img.zip` |
+| **Pi 4** | `droidnet-lite-pi4-v2.1.1.img.zip` |
 | Pi Zero W | **Not supported** — see [Pi Zero W note](#pi-zero-w) |
 
 > **Why does "Latest" on GitHub sometimes show no image?**
 > GitHub's "Latest release" badge auto-points at the most recently published release.
-> Minor releases (2.0.61, 2.1, …) contain only update packages. If the release you land
-> on has no `.img.zip` file, use the direct link above — it always points at the image
-> carrier for 2.0.
+> Update-only releases contain no `.img.zip` files. If the release you land
+> on has no `.img.zip` file, use the direct link above — it always points at the
+> current 2.x image.
 
 ### Flash and first boot
 
@@ -136,12 +136,13 @@ If your device has no internet access:
 
 | Version type | What it means | How you get it |
 |---|---|---|
-| **Major** (2.0, 3.0, …) | New SD-card image — breaking changes, full reflash required | Download the image from the initial release of that major line and flash your SD card |
+| **Major** (2.0, 3.0, …) | New SD-card image — breaking changes, full reflash required | Download the current image release and flash your SD card |
 | **Minor / patch** (2.1, 2.0.61, …) | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
 
-**The rule:** images live only on the first release of each major version line.
-The `v2.0.60` release on GitHub is the permanent home of all 2.0 disk images. Later
-releases (2.0.61, 2.1, 2.2, …) carry only update packages — no images.
+**The rule:** images live on the current 2.x image release. The
+[`v2.1.1`](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1)
+release is the current home of the 2.x disk images (it supersedes the earlier
+`v2.0.60` images). Update-only releases carry no images — always use the image link above.
 
 ---
 
