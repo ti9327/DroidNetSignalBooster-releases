@@ -24,17 +24,19 @@
       ]
     },
     "2": {
-      "version": "2.1.1",
-      "release_date": "2026-07-05T21:44:04Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-update-2.1.1.zip",
-      "checksum_sha256": "597110fc513602762cfe9d3661cab122446120a4d3c0b8117c4de13803aa1879",
-      "size_bytes": 13461859,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1",
+      "version": "2.1.2",
+      "release_date": "2026-07-15T02:31:12Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.2/droidnet-update-2.1.2.zip",
+      "checksum_sha256": "8e506a898a4b6be957518d1a6623908999d6b67f936e57f65c0b03436b99eed4",
+      "size_bytes": 13466495,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.2",
       "min_version": "1.0.0",
       "changelog": [
-        "Maintenance release: fixes a problem that could stop software updates from installing.",
-        "Updates no longer fail during the 'Creating backup' step. On some devices, installing an update stopped with an error while backing up the current installation, leaving the booster on its existing version. Updates now complete reliably, and fresh-install images no longer include the leftover developer file that caused it.",
-        "Already stuck on this error? Open the Emergency Console at http://YOUR-BOOSTER-ADDRESS/console and run: cd /opt/droidnet/web && rm -rf standalone && echo REMOVED-OK  -- then use Config > System Update > Check for Updates to install 2.1.1."
+        "Completes Maestro command passthrough in USB Dual Port mode.",
+        "Maestro: passthrough now relays the full Pololu servo command set (Set Target, Set Speed, Set Acceleration, Set PWM, Go Home, and script start/restart/stop) from an external controller like NaviCore. Previously only the 'run script' trigger was relayed and every other command was silently dropped.",
+        "Maestro: a new 'WCB link baud' control fixes garbled triggers and passthrough caused by a serial-rate mismatch between the booster and your WCB. Set it to match your WCB's serial port (commonly 57600 or 115200).",
+        "Maestro: passthrough activity now appears in the device Logs, kept lightweight so a stream of servo commands doesn't flood the log.",
+        "Note: commands that read data back from the Maestro (like 'get position') aren't relayed yet."
       ]
     }
   },
