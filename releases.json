@@ -24,19 +24,18 @@
       ]
     },
     "2": {
-      "version": "2.1.2",
-      "release_date": "2026-07-15T02:31:12Z",
-      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.2/droidnet-update-2.1.2.zip",
-      "checksum_sha256": "8e506a898a4b6be957518d1a6623908999d6b67f936e57f65c0b03436b99eed4",
-      "size_bytes": 13466495,
-      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.2",
+      "version": "2.1.3",
+      "release_date": "2026-07-15T20:41:18Z",
+      "download_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.3/droidnet-update-2.1.3.zip",
+      "checksum_sha256": "a93e31f45abcdfa26080be0ffb4bca1659c2a24974fda2e19cb1d0dd155408cb",
+      "size_bytes": 13472071,
+      "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.3",
       "min_version": "1.0.0",
       "changelog": [
-        "Completes Maestro command passthrough in USB Dual Port mode.",
-        "Maestro: passthrough now relays the full Pololu servo command set (Set Target, Set Speed, Set Acceleration, Set PWM, Go Home, and script start/restart/stop) from an external controller like NaviCore. Previously only the 'run script' trigger was relayed and every other command was silently dropped.",
-        "Maestro: a new 'WCB link baud' control fixes garbled triggers and passthrough caused by a serial-rate mismatch between the booster and your WCB. Set it to match your WCB's serial port (commonly 57600 or 115200).",
-        "Maestro: passthrough activity now appears in the device Logs, kept lightweight so a stream of servo commands doesn't flood the log.",
-        "Note: commands that read data back from the Maestro (like 'get position') aren't relayed yet."
+        "Maestro \u2014 query/response passthrough now answers the commands that read data back (Get Position, Get Moving State, Get Errors, Get Script Status) plus Mini-SSC in USB Dual Port mode, completing the passthrough begun in 2.1.2.",
+        "Maestro \u2014 script status now reads correctly: a finished onboard sequence no longer shows as still \"running\" (and a running one no longer shows as stopped).",
+        "Maestro \u2014 the Maestro tab now reflects target, speed, and acceleration set over the WCB, instead of continuing to show the old values.",
+        "Maestro \u2014 the WCB\u2192Maestro passthrough is far more efficient under heavy servo streams, using a small fraction of the CPU it did before."
       ]
     }
   },
