@@ -26,14 +26,14 @@ Your device must be in **Client Mode, connected to Wi-Fi with internet access** 
 downloads from GitHub):
 
 1. Open the web interface at `http://droidnet.local` (or the device's IP on your network).
-2. Go to **Config → System Update → Check for Updates**.
+2. Go to **Config → System → System Update → Check for Updates**.
 3. Click **Update Now** when the update is shown. The device downloads, installs, and reboots — no SD card re-flash.
 
 **No internet on the device (for example, it's in AP mode)?** Download the latest update
 package (`droidnet-update-*.zip`) from the
 [latest release](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/latest),
 then open the web interface at `http://192.168.4.1` and go to
-**Config → System Update → Manual Update** to upload it. (Don't flash an update package to an
+**Config → System → System Update → Manual Update** to upload it. (Don't flash an update package to an
 SD card — it is not a disk image.)
 
 ---
@@ -112,7 +112,7 @@ wiki page for details.
 The easiest way to update is from inside the web interface:
 
 1. Open the web interface.
-2. Go to **Config → System Update**.
+2. Go to **Config → System → System Update**.
 3. Click **Check for Updates**.
 4. Click **Update Now** when shown.
 
@@ -124,7 +124,7 @@ If your device has no internet access:
 
 1. Go to the [Releases page](https://github.com/travisccook/DroidNetSignalBooster-releases/releases)
    and download the latest `droidnet-update-*.zip` update package.
-2. In the web interface, go to **Config → System Update**.
+2. In the web interface, go to **Config → System → System Update**.
 3. Click **Manual Update** and upload the `.zip` file.
 
 > **Do NOT flash an update package to an SD card.** It is not a disk image. Flashing it
@@ -136,12 +136,13 @@ If your device has no internet access:
 
 | Version type | What it means | How you get it |
 |---|---|---|
-| **Major** (2.0, 3.0, …) | New SD-card image for fresh installs; 2.x Boosters update to 3.0 in place | Fresh install: download the current image release and flash your SD card. Existing 2.x Booster: update from the web interface |
-| **Minor / patch** (3.1, 3.0.1, …) | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
+| **Major** | Big releases; a new SD-card image for fresh installs | Fresh install: download the current image release and flash your SD card. Existing Boosters update in place from the web interface |
+| **Minor / patch** | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
 
 **The rule:** images live on the current image release. The
 [`v3.0.0`](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0)
-release is the current home of the disk images. Update-only releases carry no images — always use the image link above.
+release is the current home of the disk images. Update-only releases carry no images —
+always use the image link above.
 
 ---
 
