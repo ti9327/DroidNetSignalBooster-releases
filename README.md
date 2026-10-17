@@ -9,8 +9,9 @@ ESP32 boards, monitor serial output, and control servos, all from a browser.
 
 ### I am setting up a brand-new device (fresh SD card)
 
-**You need a disk image.** Jump to [Download the Image](#download-the-image-fresh-install)
-below.
+**First, see [What You Need](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/What-You-Need)** for the
+hardware to gather. **Then you need a disk image.** Jump to
+[Download the Image](#download-the-image-fresh-install) below.
 
 > **Do NOT download an "update package" file for a fresh install.** Update packages are
 > only for devices that are already running DroidNet. They are not disk images and cannot
@@ -39,28 +40,28 @@ SD card — it is not a disk image.)
 
 ## Download the Image (fresh install)
 
-> **Images live on the current 2.x image release (v2.1.1).**
+> **Images live on the current image release (v3.0.0).**
 > Update-only releases contain no `.img.zip` files — your device applies those
 > automatically from inside the web interface. Do not hunt for `.img.zip` files on those
 > releases; use the direct link below.
 
 **Always download your image from here:**
-[https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1)
+[https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0)
 
 ### Pick your Pi
 
 | Your Raspberry Pi | Download this file |
 |-------------------|--------------------|
-| **Pi Zero 2 W** (recommended) | `droidnet-lite-zero2-w-v2.1.1.img.zip` |
-| **Pi 3 / 3B / 3B+** | `droidnet-lite-pi3-v2.1.1.img.zip` |
-| **Pi 4** | `droidnet-lite-pi4-v2.1.1.img.zip` |
+| **Pi Zero 2 W** (recommended) | `droidnet-lite-zero2-w-v3.0.0.img.zip` |
+| **Pi 3 / 3B / 3B+** | `droidnet-lite-pi3-v3.0.0.img.zip` |
+| **Pi 4** | `droidnet-lite-pi4-v3.0.0.img.zip` |
 | Pi Zero W | **Not supported** — see [Pi Zero W note](#pi-zero-w) |
 
 > **Why does "Latest" on GitHub sometimes show no image?**
 > GitHub's "Latest release" badge auto-points at the most recently published release.
 > Update-only releases contain no `.img.zip` files. If the release you land
 > on has no `.img.zip` file, use the direct link above — it always points at the
-> current 2.x image.
+> current image release.
 
 ### Flash and first boot
 
@@ -101,10 +102,10 @@ For a complete walkthrough of first-time setup and feature configuration, see
 
 ## Updating an Existing Device
 
-**This includes v1.x → 2.0 upgrades.** If you are running any v1.x release, you can
-update to DroidNet 2.0 in place — no SD card re-flash required. The device's built-in
-update checker looks across major version channels and will offer the 2.0 update
-through the same web interface flow as any other update.
+**Boosters running DroidNet 2.x update to 3.0 in place — no SD card re-flash required.**
+The 3.0 update arrives through the same web interface flow as any other update. See the
+[Updating](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Updating)
+wiki page for details.
 
 ### Normal update (recommended)
 
@@ -116,14 +117,13 @@ The easiest way to update is from inside the web interface:
 4. Click **Update Now** when shown.
 
 The device downloads and applies the update, then reboots. No SD card required.
-This works whether you are updating within 1.x, within 2.0, or upgrading from 1.x to 2.0.
 
 ### Offline / manual update
 
 If your device has no internet access:
 
 1. Go to the [Releases page](https://github.com/travisccook/DroidNetSignalBooster-releases/releases)
-   and download the latest `droidnet-update-2.x.x.zip` update package.
+   and download the latest `droidnet-update-*.zip` update package.
 2. In the web interface, go to **Config → System Update**.
 3. Click **Manual Update** and upload the `.zip` file.
 
@@ -136,13 +136,12 @@ If your device has no internet access:
 
 | Version type | What it means | How you get it |
 |---|---|---|
-| **Major** (2.0, 3.0, …) | New SD-card image — breaking changes, full reflash required | Download the current image release and flash your SD card |
-| **Minor / patch** (2.1, 2.0.61, …) | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
+| **Major** (2.0, 3.0, …) | New SD-card image for fresh installs; 2.x Boosters update to 3.0 in place | Fresh install: download the current image release and flash your SD card. Existing 2.x Booster: update from the web interface |
+| **Minor / patch** (3.1, 3.0.1, …) | In-place update package — cumulative, backward-compatible | Applied automatically by the device, or via manual upload in the web UI |
 
-**The rule:** images live on the current 2.x image release. The
-[`v2.1.1`](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v2.1.1)
-release is the current home of the 2.x disk images (it supersedes the earlier
-`v2.0.60` images). Update-only releases carry no images — always use the image link above.
+**The rule:** images live on the current image release. The
+[`v3.0.0`](https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0)
+release is the current home of the disk images. Update-only releases carry no images — always use the image link above.
 
 ---
 
@@ -170,6 +169,7 @@ fully supported.
 
 Full documentation lives in the [Wiki](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki):
 
+- [What You Need](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/What-You-Need) — The hardware to gather before you start
 - [Getting Started](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Getting-Started) — Hardware, image download, first boot, and feature setup
 - [Installation](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Installation) — Detailed flashing instructions (Imager, Etcher, command line)
 - [Updating](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Updating) — Keeping your device current
