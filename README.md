@@ -70,11 +70,12 @@ wiki page for step-by-step instructions using Raspberry Pi Imager, balenaEtcher,
 command line. The short version:
 
 1. Open [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-2. Choose OS → **Use custom** → select the `.img.zip` file (no manual unzip needed).
-3. Choose Storage → select your SD card.
-4. Click **Write**.
-5. Insert the card into your Pi and power it on.
-6. **Wait 2–3 minutes** — first boot is slow while the device expands its filesystem and
+2. **Device**: select your Pi model, then **Next**.
+3. **OS** → **Use Custom** → select the `.img.zip` file (no manual unzip needed), then **Next**.
+4. **Storage**: select your SD card, then **Next**. If Imager offers customisation, choose **Skip customisation**.
+5. Select **Write**, then **I understand, erase and write**.
+6. Insert the card into your Pi and power it on.
+7. **Wait 2–3 minutes** — first boot is slow while the device expands its filesystem and
    configures itself.
 
 ---
@@ -92,7 +93,7 @@ Once the first boot is complete:
 You should see the DroidNet Signal Booster dashboard.
 
 > **Security reminder:** The default password (`droidnet123`) is the same on every new
-> device. Change it in **Config → Access Point Settings** before using your device in a
+> device. Change it in **Config → Network → Access Point Settings** before using your device in a
 > shared space.
 
 For a complete walkthrough of first-time setup and feature configuration, see
@@ -171,7 +172,7 @@ fully supported.
 Full documentation lives in the [Wiki](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki):
 
 - [What You Need](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/What-You-Need) — The hardware to gather before you start
-- [Getting Started](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Getting-Started) — Hardware, image download, first boot, and feature setup
+- [Getting Started](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Getting-Started) — First boot, connecting, and feature setup
 - [Installation](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Installation) — Detailed flashing instructions (Imager, Etcher, command line)
 - [Updating](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Updating) — Keeping your device current
 - [Network Modes](https://github.com/travisccook/DroidNetSignalBooster-releases/wiki/Network-Modes) — AP mode vs client mode
