@@ -86,6 +86,22 @@
         "pi4": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v2.1.1/droidnet-lite-pi4-v2.1.1.img.zip"
       },
       "note": "Fresh-install SD-card images for 2.x. Pi Zero W is not supported \u2014 use Pi Zero 2 W. These replace the earlier 2.0.60 images, which shipped a leftover file that could stop updates from installing on first update."
+    },
+    "3": {
+      "version": "3.0.0",
+      "models": [
+        "zero2-w",
+        "pi3",
+        "pi4"
+      ],
+      "release_date": "2026-10-18",
+      "release_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0",
+      "downloads": {
+        "zero2-w": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v3.0.0/droidnet-lite-zero2-w-v3.0.0.img.zip",
+        "pi3": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v3.0.0/droidnet-lite-pi3-v3.0.0.img.zip",
+        "pi4": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/download/v3.0.0/droidnet-lite-pi4-v3.0.0.img.zip"
+      },
+      "note": "Fresh-install SD-card images for 3.0. Boosters on 2.x update in place from Config \u2192 System \u2192 System Update; no re-flash needed."
     }
   }
 }
