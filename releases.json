@@ -47,15 +47,15 @@
       "release_notes_url": "https://github.com/travisccook/DroidNetSignalBooster-releases/releases/tag/v3.0.0",
       "min_version": "3.0.0",
       "changelog": [
-        "3.0 makes the Signal Booster the hub for the whole droid, with new tabs, a media editor and a phone-friendly interface.",
-        "HCR tab: manage the HCR vocalizer's card, sounds and settings from the browser.",
+        "3.0's headline features are HCR management and flourishes, plus new tabs, a media editor and a phone-friendly UI.",
+        "HCR tab: back up, edit and add sounds to your HCR's SD card from the browser, without opening the droid.",
+        "Flourishes: the dome and pie panels move along with HCR sounds, started by a WCB command (`@F`).",
+        "Droid tab: a WDP card shows every WCB in the droid, its firmware and what each serial port has.",
         "CHiRP tab: find your CHiRP board and manage its sounds and settings.",
         "SHADOW tab: edit the droid controller's button map.",
         "HoloFan tab: a clip library with previews, sync to the fan, and a Create studio for making clips.",
-        "Droid tab: a WDP card shows every WCB in the droid, its firmware and what each serial port has.",
         "Media Editor: crop, trim, fade, convert and split videos and sounds, then send sounds to the HCR or CHiRP.",
         "Comlink View: a phone-friendly remote with your command buttons, synced with the Comlink iOS app.",
-        "Maestro: Flourish moves the dome and pie panels along with an HCR sound, and channels can be locked out.",
         "WCB: the Wizard and board firmware move to Greg Hulette's WCB 7.0.1, including over-the-air updates."
       ]
     }
